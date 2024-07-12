@@ -65,6 +65,8 @@ public class BusquedaProductos {
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setSize(300,300);
                 frame.setVisible(true);
+                ((JFrame)SwingUtilities.getWindowAncestor(irARegistroButton)).dispose();
+
             }
         });
     }
