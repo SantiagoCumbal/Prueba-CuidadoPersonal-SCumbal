@@ -20,7 +20,6 @@ public class BusquedaProductos {
     String url="jdbc:mysql://localhost:3306/productos_cp";
     String usuario = "root";
     String contraseña= "123456";
-    String query="select * from PRODUCTO when codigo_producto = '"+"CP001"+"'";
 
 
 
@@ -30,6 +29,7 @@ public class BusquedaProductos {
             public void actionPerformed(ActionEvent e) {
                 try(Connection connection= DriverManager.getConnection(url,usuario,contraseña)){
                     System.out.println("CONEXION EXITOSA");
+                    String query="select * from PRODUCTO where codigo_producto= '"+buscarP.getText()+"'";
                     Statement statement=connection.createStatement();
                     ResultSet resultSet=statement.executeQuery(query);
                     while(resultSet.next()){
